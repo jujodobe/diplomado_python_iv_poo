@@ -1,4 +1,6 @@
-class Transporte:
+from abc import ABC, abstractmethod
+
+class Transporte(ABC):
     
     def __init__(self, tipo, capacidad, desplazamiento, velocidadMaxima, kilometraje):
         self.__TipoTransporte = tipo
@@ -6,6 +8,18 @@ class Transporte:
         self.__Desplazamiento = desplazamiento
         self.__VelocidadMaxima = velocidadMaxima
         self.__Kilometraje = kilometraje
+    
+    @abstractmethod
+    def arrancar(self):
+        pass
+    
+    @abstractmethod
+    def acelerar(self):
+        pass
+
+    @abstractmethod
+    def detener(self):
+        pass
     
     def imprimir(self):
         print("El tipo de transporte es: " + self.__TipoTransporte)
